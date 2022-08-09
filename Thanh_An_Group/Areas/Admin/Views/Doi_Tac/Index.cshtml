@@ -1,0 +1,101 @@
+﻿@model IEnumerable<ThanhAn_Group.DAL.Models.DoiTac>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/Layout_Admin.cshtml";
+}
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Dữ liệu đối tác</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="/Admin/TrangChu/Index">Home</a></li>
+                    <li class="breadcrumb-item active">Dữ liệu đối tác</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+
+                        <a href="/Admin/Doi_Tac/Create">Thêm mới</a>
+
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.NameDoiTac)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.AdressDoiTac)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Status)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Tel)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Mst)
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.NameDoiTac)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.AdressDoiTac)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Status)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Tel)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Mst)
+                                        </td>
+                                        <td>
+                                            <a href="/Admin/Doi_Tac/Update/@item.Id">Edit</a> |
+
+                                            <a href="/Admin/Doi_Tac/Delete/@item.Id">Delete</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+
+
+
+   
+

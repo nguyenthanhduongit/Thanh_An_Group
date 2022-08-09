@@ -1,0 +1,111 @@
+﻿@model IEnumerable<ThanhAn_Group.DAL.Models.Baiviet>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/Layout_Admin.cshtml";
+}
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Dữ liệu Bài Viết</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="/Admin/TrangChu/Index">Home</a></li>
+                    <li class="breadcrumb-item active">Dữ liệu Bài Viết</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                       
+                            <a href="/Admin/Article/Create">Thêm mới</a>
+                      
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Title)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.ShortContent)
+                                    </th>
+                                    @*<th width="300">
+                    @Html.DisplayNameFor(model => model.Contents)
+                </th>*@
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Images)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Types)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.CreateDate)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Status)
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr class="a">
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Title)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ShortContent)
+                                        </td>
+                                        @*<td class="sImages">
+                        @Html.Raw(item.Contents)
+                    </td>*@
+                                        <td>
+                                            <img src="~/Images/@item.Images"
+                                                 width="300px"
+                                                 asp-append-version="true" />
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Types)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CreateDate)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Status)
+                                        </td>
+                                        <td>
+                                            <a href="/Admin/Article/Update/@item.PkbaivietId">Edit</a> |
+                                            <a href="/Admin/Article/Detail/@item.PkbaivietId">Details</a> |
+                                            <a href="/Admin/Article/Delete/@item.PkbaivietId">Delete</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+
+

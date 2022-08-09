@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>D:\P_ThanhAn_Group</_PublishTargetUrl>
+    <History>True|2022-02-28T13:42:00.4252511Z;True|2022-02-28T16:21:38.8908802+07:00;True|2022-02-28T16:05:03.4783446+07:00;True|2022-02-28T16:02:51.2455444+07:00;True|2022-02-28T15:15:20.0842634+07:00;True|2022-02-28T14:33:56.7286302+07:00;True|2022-02-28T14:30:27.0917989+07:00;True|2022-02-28T14:16:42.8046830+07:00;False|2022-02-28T14:13:30.7882278+07:00;False|2022-02-28T14:06:54.3761095+07:00;True|2022-02-28T13:57:55.2056738+07:00;True|2022-02-28T13:56:39.6213356+07:00;</History>
+  </PropertyGroup>
+</Project>

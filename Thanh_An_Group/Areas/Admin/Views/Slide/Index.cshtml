@@ -1,0 +1,100 @@
+﻿@model IEnumerable<ThanhAn_Group.DAL.Models.Slide>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/Layout_Admin.cshtml";
+}
+
+<!-- Content Wrapper. Contains page content -->
+
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1> Dữ liêu Slide</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Dữ liêu Slide</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <p>
+                                <a href="/Admin/Slide/Create" >Create New</a>
+                            </p>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.SlideName)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Images)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.DisplayOrder)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Status)
+                                        </th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.SlideName)
+                                            </td>
+                                            <td>
+                                                <img src="~/Images/@item.Images"
+                                                    
+                                                      width="300px"
+                                                     asp-append-version="true" />
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.DisplayOrder)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Status)
+                                            </td>
+                                            <td>
+                                                <a href ="/Admin/Slide/Update/@item.SlideId">Edit</a> |
+                                              
+                                                <a href ="/Admin/Slide/Delete/@item.SlideId">Delete</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+
+<!-- /.content-wrapper -->
+
+

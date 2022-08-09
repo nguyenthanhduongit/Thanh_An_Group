@@ -1,0 +1,102 @@
+﻿@using Thanh_An_Group.Controllers
+@using ThanhAn_Group.DAL.Models;
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<GalleriesVideo> galleriesVideos = GalleriesController.GetGallVideo();
+    List<GalleriesImage> galleriesImages = GalleriesController.GetGallImages();
+}
+
+<main>
+    <div class="container-fluid p-0 text-white v-slide">
+        <div class="et-header" style="background-image: url('/Client/image/banner.jpg');">
+            <div class="container">
+                <div class="bg-box"></div>
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-md-12 hr-left">
+                        <h1 class="name-page">Trang chủ</h1>
+                        <h2 class="text-header">Thư viện ảnh - video</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mt-85">
+                <div class="tab-custom">
+                    <ul class="nav nav-tabs h-100 tab-moto" id="tabGallery" role="tablist">
+                        <li class="nav-item tab-active-motor">
+                            <a class="nav-link active" id="video-tab" data-toggle="tab" href="#video" role="tab"
+                               aria-controls="video" aria-selected="true">Video</a>
+                        </li>
+                        <li class="nav-item tab-active-motor">
+                            <a class="nav-link" id="image-tab" data-toggle="tab" href="#image" role="tab"
+                               aria-controls="image" aria-selected="false">Hình ảnh</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-12 px-5 mt-5">
+                <div class="tab-content" id="myTabContent">
+                    <!-- video gallery -->
+                    <div class="tab-pane fade show active" id="video" role="tabpanel" aria-labelledby="video-tab">
+                        <div class="row">
+                            @foreach (var itemgallVideo in galleriesVideos)
+                            {
+                               
+                                <div class="col-xs-12 col-md-3">
+                                    <div class="box-video">
+                                        <a class="grouped_elements" href="#data-@itemgallVideo.Id" rel="group1">
+                                            <iframe width="100%" height="100%"
+                                                    src="@itemgallVideo.Link" frameborder="0"
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                    allowfullscreen></iframe>
+                                        </a>
+                                    </div>
+                                    <div style="display:none">
+                                        <div id="data-@itemgallVideo.Id" class="h-100">
+                                            <iframe width="100%" height="100%"
+                                                    src="@itemgallVideo.Link" frameborder="0"
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                    allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
+                           
+                        </div>
+                    </div>
+                    <!-- image gallery-->
+                    <div class="tab-pane fade" id="image" role="tabpanel" aria-labelledby="image-tab">
+                        <div id="sub-album">
+                            <div class="row">
+                                @foreach (var itemGallImages in galleriesImages)
+                                {
+                                    <div id="@itemGallImages.Id" class="col-xs-12 col-md-4 album-item mb-3"
+                                         onclick="changeAlbum(@itemGallImages.Id)" style="cursor:pointer">
+                                        <div class="card">
+                                            <img class="card-img-top"
+     
+                                            src="~/Images/@itemGallImages.Image"
+                                            style="height: 25vw;object-fit: cover;object-position:top;">
+                                            <div class="card-body">
+                                                <b>
+                                                    @itemGallImages.Name
+                                                </b>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+

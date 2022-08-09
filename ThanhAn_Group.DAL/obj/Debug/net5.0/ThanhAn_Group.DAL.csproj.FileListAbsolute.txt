@@ -1,0 +1,14 @@
+C:\Users\nguye\source\repos\Thanh_An_Group\ThanhAn_Group.DAL\bin\Debug\net5.0\ThanhAn_Group.DAL.deps.json
+C:\Users\nguye\source\repos\Thanh_An_Group\ThanhAn_Group.DAL\bin\Debug\net5.0\ThanhAn_Group.DAL.runtimeconfig.json
+C:\Users\nguye\source\repos\Thanh_An_Group\ThanhAn_Group.DAL\bin\Debug\net5.0\ThanhAn_Group.DAL.runtimeconfig.dev.json
+C:\Users\nguye\source\repos\Thanh_An_Group\ThanhAn_Group.DAL\bin\Debug\net5.0\ThanhAn_Group.DAL.dll
+C:\Users\nguye\source\repos\Thanh_An_Group\ThanhAn_Group.DAL\bin\Debug\net5.0\ref\ThanhAn_Group.DAL.dll
+C:\Users\nguye\source\repos\Thanh_An_Group\ThanhAn_Group.DAL\bin\Debug\net5.0\ThanhAn_Group.DAL.pdb
+C:\Users\nguye\source\repos\Thanh_An_Group\ThanhAn_Group.DAL\obj\Debug\net5.0\ThanhAn_Group.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nguye\source\repos\Thanh_An_Group\ThanhAn_Group.DAL\obj\Debug\net5.0\ThanhAn_Group.DAL.AssemblyInfoInputs.cache
+C:\Users\nguye\source\repos\Thanh_An_Group\ThanhAn_Group.DAL\obj\Debug\net5.0\ThanhAn_Group.DAL.AssemblyInfo.cs
+C:\Users\nguye\source\repos\Thanh_An_Group\ThanhAn_Group.DAL\obj\Debug\net5.0\ThanhAn_Group.DAL.csproj.CoreCompileInputs.cache
+C:\Users\nguye\source\repos\Thanh_An_Group\ThanhAn_Group.DAL\obj\Debug\net5.0\ThanhAn_Group.DAL.dll
+C:\Users\nguye\source\repos\Thanh_An_Group\ThanhAn_Group.DAL\obj\Debug\net5.0\ref\ThanhAn_Group.DAL.dll
+C:\Users\nguye\source\repos\Thanh_An_Group\ThanhAn_Group.DAL\obj\Debug\net5.0\ThanhAn_Group.DAL.pdb
+C:\Users\nguye\source\repos\Thanh_An_Group\ThanhAn_Group.DAL\obj\Debug\net5.0\ThanhAn_Group.DAL.genruntimeconfig.cache

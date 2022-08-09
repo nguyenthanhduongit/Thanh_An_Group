@@ -1,0 +1,478 @@
+﻿@using Thanh_An_Group.Controllers
+@using ThanhAn_Group.DAL.Models;
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<Baiviet> baiviet = CommentController.GetTinTuc();
+    List<Baiviet> baochi = CommentController.GetBaochi();
+    List<Baiviet> hdxh = CommentController.Gethdxh();
+}
+
+<main>
+    <div class="container-fluid p-0 text-white v-slide">
+        <div class="et-header" style="background-image: url('/Client/image/bg-tin-tuc.jpg')">
+            <div class="container">
+                <div class="bg-box"></div>
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-md-12 hr-left mgtop-40">
+                        <h1 class="name-page text-uppercase">Trang chủ</h1>
+                        <h2 class="text-header">Báo chí</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="list-news-page">
+        <div class="container">
+            <!-- Tab panes -->
+            <div class="row news-list-appends">
+                <div class="col-md-12 mt-85">
+                    <div class="tab-custom">
+                        <ul class="nav nav-tabs h-100 tab-moto" id="tabNews" role="tablist">
+                            <li class="nav-item tab-active-motor">
+                                <a class="nav-link active" id="newspapers-tab" data-toggle="tab" href="#newspapers"
+                                   role="tab" aria-controls="newspapers" aria-selected="true">Báo chí</a>
+                            </li>
+                            <li class="nav-item tab-active-motor">
+                                <a class="nav-link" id="news-tab" data-toggle="tab" href="#news" role="tab"
+                                   aria-controls="news" aria-selected="false">Tin tức sự kiện</a>
+                            </li>
+                            <li class="nav-item tab-active-motor">
+                                <a class="nav-link" id="social-tab" data-toggle="tab" href="#social" role="tab"
+                                   aria-controls="social" aria-selected="false">Hoạt động xã hội</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <!-- data -->
+                    <div class="tab-content" id="myTabContent">
+                        <!-- dữ liệu báo chí -->
+                        <div class="tab-pane fade show active" id="newspapers" role="tabpanel"
+                             aria-labelledby="newspapers-tab">
+                            <div class="row">
+
+                                <div class="col-md-12 col-lg-6">
+                                    @foreach (var itembaochiTab in baochi.Take(1))
+                                    {
+                                        <a href="/Bai_VIet/Detail/@itembaochiTab.PkbaivietId">
+                                            <div class="list-news-menu1">
+                                                <div class="item-news position-relative">
+                                                    <div class="item-news-img">
+                                                        <img src="~/Images/@itembaochiTab.Images" alt="News" />
+                                                    </div>
+                                                    <div class="item-news-title">
+                                                        <h3 class="my-upercase">
+                                                            @itembaochiTab.Title
+                                                        </h3>
+                                                        <div class="item-new-solid">
+                                                            <span>
+                                                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                                                @itembaochiTab.CreateDate
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    }
+                                </div>
+
+
+                                <div class="col-md-12 col-lg-6">
+                                    <div class="row">
+                                        @foreach (var itembaochicol6 in baochi.Skip(1).Take(2))
+                                        {
+                                            <div class="col-md-6">
+                                                <div class="news-child">
+                                                    <div class="news-child-img">
+                                                        <a href="/Bai_VIet/Detail/@itembaochicol6.PkbaivietId"><img src="~/Images/@itembaochicol6.Images" alt="" /></a>
+                                                    </div>
+                                                    <div class="news-child-info">
+                                                        <h3>
+                                                            <a href="/Bai_VIet/Detail/@itembaochicol6.PkbaivietId" class="my-upercase">
+                                                                @itembaochicol6.Title
+                                                            </a>
+                                                        </h3>
+                                                        <div class="news-child-solid">
+                                                            <span>
+                                                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                                                @itembaochicol6.CreateDate
+                                                            </span>
+                                                        </div>
+                                                        <div class="news-child-content">
+                                                            @itembaochicol6.ShortContent
+                                                        </div>
+                                                        <span class="readmore">
+                                                            <a href="/Bai_VIet/Detail/@itembaochicol6.PkbaivietId">Xem chi tiết</a>
+                                                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+
+                                <div class="row" id="newspapers-data">
+                                    @foreach (var baochicol3 in baochi.Skip(3).Take(4))
+                                    {
+                                        <div class="col-md-6 col-lg-3">
+                                            <div class="news-child">
+                                                <div class="news-child-img">
+                                                    <a href="/Bai_VIet/Detail/@baochicol3.PkbaivietId"><img src="~/Images/@baochicol3.Images" alt="" /></a>
+                                                </div>
+                                                <div class="news-child-info">
+                                                    <h3>
+                                                        <a href="/Bai_VIet/Detail/@baochicol3.PkbaivietId" class="my-upercase">
+                                                            @baochicol3.Title
+                                                        </a>
+                                                    </h3>
+                                                    <div class="news-child-solid">
+                                                        <span>
+                                                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                                                            @baochicol3.CreateDate
+                                                        </span>
+                                                    </div>
+                                                    <div class="news-child-content">
+                                                        @baochicol3.ShortContent
+                                                    </div>
+                                                    <span class="readmore">
+                                                        <a href="/Bai_VIet/Detail/@baochicol3.PkbaivietId">Xem chi tiết</a>
+                                                        <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                            <div class="row newspapers-btn-more">
+                                <div class="col-md-12 text-center">
+                                    <button onclick="loadMoreData('newspapers')" class="btn btn-more">XEM THÊM</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- dữ liệu tin tức sự kiện -->
+                        <div class="tab-pane fade" id="news" role="tabpanel" aria-labelledby="news-tab">
+                            <div class="row">
+
+                                <div class="col-md-12 col-lg-6">
+                                    @foreach (var itembaivietTab in baiviet.Take(1))
+                                    {
+                                        <a href="/Bai_VIet/Detail/@itembaivietTab.PkbaivietId">
+                                            <div class="list-news-menu1">
+                                                <div class="item-news position-relative">
+                                                    <div class="item-news-img">
+                                                        <img src="~/Images/@itembaivietTab.Images" alt="News" />
+                                                    </div>
+                                                    <div class="item-news-title">
+                                                        <h3 class="my-upercase">
+                                                            @itembaivietTab.Title
+                                                        </h3>
+                                                        <div class="item-new-solid">
+                                                            @*<span>
+                                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                            Hà Nội
+                                        </span>*@
+                                                            <span>
+                                                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                                                @itembaivietTab.CreateDate
+                                                            </span>
+                                                            @*<span>
+                                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                            00:00
+                                        </span>*@
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    }
+                                </div>
+
+
+                                <div class="col-md-12 col-lg-6">
+                                    <div class="row">
+                                        @foreach (var itembaivietcol6 in baiviet.Skip(1).Take(2))
+                                        {
+                                            <div class="col-md-6">
+                                                <div class="news-child">
+                                                    <div class="news-child-img">
+                                                        <a href="/Bai_VIet/Detail/@itembaivietcol6.PkbaivietId"><img src="~/Images/@itembaivietcol6.Images" alt="" /></a>
+                                                    </div>
+                                                    <div class="news-child-info">
+                                                        <h3>
+                                                            <a href="/Bai_VIet/Detail/@itembaivietcol6.PkbaivietId" class="my-upercase">
+                                                                @itembaivietcol6.Title
+                                                            </a>
+                                                        </h3>
+                                                        <div class="news-child-solid">
+                                                            @*<span>
+                                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                            Hà Nội
+                                        </span>*@
+                                                            <span>
+                                                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                                                @itembaivietcol6.CreateDate
+                                                            </span>
+                                                            @*<span>
+                                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                            07:00
+                                        </span>*@
+                                                        </div>
+                                                        <div class="news-child-content">
+                                                            @itembaivietcol6.ShortContent
+                                                        </div>
+                                                        <span class="readmore">
+                                                            <a href="/Bai_VIet/Detail/@itembaivietcol6.PkbaivietId">Xem chi tiết</a>
+                                                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+
+
+                                    </div>
+                                </div>
+                                <div class="row" id="news-data">
+                                    @foreach (var baivietcol3 in baiviet.Skip(3).Take(4))
+                                    {
+                                        <div class="col-md-6 col-lg-3">
+                                            <div class="news-child">
+                                                <div class="news-child-img">
+                                                    <a href="/Bai_VIet/Detail/@baivietcol3.PkbaivietId"><img src="~/Images/@baivietcol3.Images" alt="" /></a>
+                                                </div>
+                                                <div class="news-child-info">
+                                                    <h3>
+                                                        <a href="/Bai_VIet/Detail/@baivietcol3.PkbaivietId" class="my-upercase">
+                                                            @baivietcol3.Title
+                                                        </a>
+                                                    </h3>
+                                                    <div class="news-child-solid">
+                                                        @*<span>
+                                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                        Hà Nội
+                                    </span>*@
+                                                        <span>
+                                                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                                                            @baivietcol3.CreateDate
+                                                        </span>
+                                                        @*<span>
+                                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                        07:00
+                                    </span>*@
+                                                    </div>
+                                                    <div class="news-child-content">
+                                                        @baivietcol3.CreateDate
+                                                    </div>
+                                                    <span class="readmore">
+                                                        <a href="/Bai_VIet/Detail/@baivietcol3.PkbaivietId">Xem chi tiết</a>
+                                                        <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                            <div class="row news-btn-more">
+                                <div class="col-md-12 text-center">
+                                    <button onclick="loadMoreData('news')" class="btn btn-more">XEM THÊM</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- dữ liệu hoạt động xã hội -->
+                        <div class="tab-pane fade" id="social" role="tabpanel" aria-labelledby="social-tab">
+                            <div class="row">
+
+                                <div class="col-md-12 col-lg-6">
+                                    @foreach (var itemhdxhTab in hdxh.Take(1))
+                                    {
+                                        <a href="/Bai_VIet/Detail/@itemhdxhTab.PkbaivietId">
+                                            <div class="list-news-menu1">
+                                                <div class="item-news position-relative">
+                                                    <div class="item-news-img">
+                                                        <img src="~/Images/@itemhdxhTab.Images" alt="News" />
+                                                    </div>
+                                                    <div class="item-news-title">
+                                                        <h3 class="my-upercase">
+                                                            @itemhdxhTab.Title
+                                                        </h3>
+                                                        <div class="item-new-solid">
+                                                            @*<span>
+                                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                            Hà Nội
+                                        </span>*@
+                                                            <span>
+                                                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                                                @itemhdxhTab.CreateDate
+                                                            </span>
+                                                            @*<span>
+                                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                            00:00
+                                        </span>*@
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    }
+                                </div>
+                                <div class="col-md-12 col-lg-6">
+                                    <div class="row">
+                                        @foreach (var itemhdxhcol6 in hdxh.Skip(1).Take(2))
+                                        {
+                                            <div class="col-md-6">
+                                                <div class="news-child">
+                                                    <div class="news-child-img">
+                                                        <a href="/Bai_VIet/Detail/@itemhdxhcol6.PkbaivietId"><img src="~/Images/@itemhdxhcol6.Images" alt="" /></a>
+                                                    </div>
+                                                    <div class="news-child-info">
+                                                        <h3>
+                                                            <a href="/Bai_VIet/Detail/@itemhdxhcol6.PkbaivietId" class="my-upercase">
+                                                                @itemhdxhcol6.Title
+                                                            </a>
+                                                        </h3>
+                                                        <div class="news-child-solid">
+                                                            @*<span>
+                                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                            Hà Nội
+                                        </span>*@
+                                                            <span>
+                                                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                                                @itemhdxhcol6.CreateDate
+                                                            </span>
+                                                            @*<span>
+                                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                            07:00
+                                        </span>*@
+                                                        </div>
+                                                        <div class="news-child-content">
+                                                            @itemhdxhcol6.ShortContent
+                                                        </div>
+                                                        <span class="readmore">
+                                                            <a href="/Bai_VIet/Detail/@itemhdxhcol6.PkbaivietId">Xem chi tiết</a>
+                                                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                                <div class="row" id="socials-data">
+                                    @foreach (var hdxhcol3 in hdxh.Skip(3))
+                                    {
+                                        <div class="col-md-6 col-lg-3">
+                                            <div class="news-child">
+                                                <div class="news-child-img">
+                                                    <a href="/Bai_VIet/Detail/@hdxhcol3.PkbaivietId"><img src="~/Images/@hdxhcol3.Images" alt="" /></a>
+                                                </div>
+                                                <div class="news-child-info">
+                                                    <h3>
+                                                        <a href="/Bai_VIet/Detail/@hdxhcol3.PkbaivietId" class="my-upercase">
+                                                            @hdxhcol3.Title
+                                                        </a>
+                                                    </h3>
+                                                    <div class="news-child-solid">
+                                                        @*<span>
+                                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                        Hà Nội
+                                    </span>*@
+                                                        <span>
+                                                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                                                            @hdxhcol3.CreateDate
+                                                        </span>
+                                                        @*<span>
+                                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                        07:00
+                                    </span>*@
+                                                    </div>
+                                                    <div class="news-child-content">
+                                                        @hdxhcol3.CreateDate
+                                                    </div>
+                                                    <span class="readmore">
+                                                        <a href="/Bai_VIet/Detail/@hdxhcol3.PkbaivietId">Xem chi tiết</a>
+                                                        <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                            <div class="row socials-btn-more">
+                                <div class="col-md-12 text-center">
+                                    <button onclick="loadMoreData('socials')" class="btn btn-more">XEM THÊM</button>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+@section Scripts {
+    <script>
+
+        var page = 7;
+        function loadMoreData(category) {
+            
+            $.ajax({
+                url: 'https://localhost:44308/Comment/GetBaochiPages',
+                method: 'POST',
+                data: {
+                    'category': category,
+                    'page': page
+                },
+                success: function (data) {
+                    if (data.baiviet.length < 4) {
+                        var btn = $('.' + category + '-btn-more').hide();
+                    }
+                    var _html = ``;
+                    var listData = data.baiviet;
+                    console.log(data)
+                    for (var i = 0; i < listData.length; i++) {
+                        var element = listData[i];
+                        _html += `<div class="col-md-6 col-lg-3">
+                    <div class="news-child">
+                        <div class="news-child-img">
+                            <a href="/Bai_VIet/Detail/`+ element.pkbaivietId + `"><img src="/Images/` + element.images + `" alt="" /></a>
+                        </div>
+                        <div class="news-child-info">
+                            <h3>
+                                <a href="/Bai_VIet/Detail/`+ element.pkbaivietId + `" class="my-upercase">
+                                    `+ element.title + `
+                                </a>
+                            </h3>
+                            <div class="news-child-solid">
+                                <span>
+                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                    `+ element.createDate + `
+                                </span>
+                            </div>
+                            <div class="news-child-content">
+                                `+ element.shortContent + `
+                            </div>
+                            <span class="readmore">
+                                <a href="/Bai_VIet/Detail/`+ element.pkbaivietId + `">Xem chi tiết</a>
+                                    <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>`;
+                    }
+                    $('#' + category + '-data').append(_html);
+                    page += 4;
+                }  
+            })
+        }
+    </script>
+    
+
+}
+
+

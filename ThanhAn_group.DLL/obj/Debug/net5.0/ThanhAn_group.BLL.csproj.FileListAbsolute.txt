@@ -1,0 +1,15 @@
+C:\Users\nguye\source\repos\Thanh_An_Group\ThanhAn_group.DLL\bin\Debug\net5.0\ThanhAn_group.BLL.deps.json
+C:\Users\nguye\source\repos\Thanh_An_Group\ThanhAn_group.DLL\bin\Debug\net5.0\ThanhAn_group.BLL.dll
+C:\Users\nguye\source\repos\Thanh_An_Group\ThanhAn_group.DLL\bin\Debug\net5.0\ref\ThanhAn_group.BLL.dll
+C:\Users\nguye\source\repos\Thanh_An_Group\ThanhAn_group.DLL\bin\Debug\net5.0\ThanhAn_group.BLL.pdb
+C:\Users\nguye\source\repos\Thanh_An_Group\ThanhAn_group.DLL\bin\Debug\net5.0\ThanhAn_Group.DAL.dll
+C:\Users\nguye\source\repos\Thanh_An_Group\ThanhAn_group.DLL\bin\Debug\net5.0\ThanhAn_Group.DAL.pdb
+C:\Users\nguye\source\repos\Thanh_An_Group\ThanhAn_group.DLL\obj\Debug\net5.0\ThanhAn_group.BLL.csproj.AssemblyReference.cache
+C:\Users\nguye\source\repos\Thanh_An_Group\ThanhAn_group.DLL\obj\Debug\net5.0\ThanhAn_group.BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nguye\source\repos\Thanh_An_Group\ThanhAn_group.DLL\obj\Debug\net5.0\ThanhAn_group.BLL.AssemblyInfoInputs.cache
+C:\Users\nguye\source\repos\Thanh_An_Group\ThanhAn_group.DLL\obj\Debug\net5.0\ThanhAn_group.BLL.AssemblyInfo.cs
+C:\Users\nguye\source\repos\Thanh_An_Group\ThanhAn_group.DLL\obj\Debug\net5.0\ThanhAn_group.BLL.csproj.CoreCompileInputs.cache
+C:\Users\nguye\source\repos\Thanh_An_Group\ThanhAn_group.DLL\obj\Debug\net5.0\ThanhAn_group.BLL.csproj.CopyComplete
+C:\Users\nguye\source\repos\Thanh_An_Group\ThanhAn_group.DLL\obj\Debug\net5.0\ThanhAn_group.BLL.dll
+C:\Users\nguye\source\repos\Thanh_An_Group\ThanhAn_group.DLL\obj\Debug\net5.0\ref\ThanhAn_group.BLL.dll
+C:\Users\nguye\source\repos\Thanh_An_Group\ThanhAn_group.DLL\obj\Debug\net5.0\ThanhAn_group.BLL.pdb

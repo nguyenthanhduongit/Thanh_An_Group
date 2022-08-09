@@ -1,0 +1,330 @@
+﻿@using Thanh_An_Group.Controllers
+@using ThanhAn_Group.DAL.Models;
+    @{
+        List<DoiTac> doitac = CommentController.GetDoiTac();
+    }
+
+    <!DOCTYPE html>
+    <html lang="vi">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Thành An -Group </title>
+        <meta name="site_name" content="MyWebsite" />
+        <meta property="og:site_name" content="MyWebsite" />
+        <meta name="locale" content="vi" />
+        <!-- Favicon -->
+        <link href="~/Client/image/logo-TAG-vuong-1000x1000.png" rel="icon" type="image/x-icon">
+
+        <link href="~/Client/css/app.css" rel="stylesheet" />
+        <link type="text/css" href="~/Client/css/jquery.fancybox-1.3.4.css" rel="stylesheet">
+        <style>
+            .content img {
+                width: 960px;
+            }
+        </style>
+        @RenderSection("css", false)
+    </head>
+
+    <body>
+        <div class="">
+            <nav class="navbar navbar-expand-lg nav-header">
+                <div class="container-full">
+                    <div class="header-menu">
+                        <button class="d-lg-none d-none-xl" id="menu"><span></span></button>
+                        <a class="navbar-brand" href="/Home/Index">
+                            <img src="~/Client/image/logo-TAG-ngang-2000x267.png" alt="" class="logo">
+                        </a>
+                        <!-- Navigation -->
+                        <div class="menu">
+                            <div class="navbar-collapse">
+                                <div id="drop_down">
+                                    <ul class="navbar-nav navbar-menu">
+                                        <li> <a class="nav-link" href="/Home/Intro">Giới thiệu </a> </li>
+                                        <li> <a class="nav-link" href="/Home/Mohinhhoatdong">Mô hình hoạt động</a></li>
+                                        <li class="nav-item">
+                                            <a class="nav-link has-children" href="/Bai_Viet/Index">
+                                                Tin tức và sự kiện
+                                            </a>
+                                            <ul class="sub-menu">
+                                                <li>
+                                                    <a class="nav-link" href="/Bai_Viet/Index">
+                                                        Báo chí
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="nav-link" href="/Bai_Viet/Index">
+                                                        Tin tức sự kiện
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="nav-link" href="/Bai_Viet/Index">
+                                                        Hoạt động xã hội
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a class="nav-link" href="/Galleries/Index">
+                                                Thư viện ảnh - video
+                                            </a>
+                                        </li>
+                                        @*<li class="sm-form">
+                                            <form action="" method="get" class="w-100 pt-2 pb-2 position-relative">
+                                                <input type="text" name="search"
+                                                       class="form-control form-control-sm rounded-0" placeholder="Tìm kiếm">
+                                                <button type="submit"><i class="fa fa-search"></i></button>
+                                            </form>
+                                        </li>*@
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lang-mobile float-right dropdown" style="position: absolute; right: 0; top: 9px">
+                            <div class="dropdown show">
+                                <button class="btn btn-white btn-sm dropdown-toggle p-0 border-0" type="button"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="flag-icon flag-icon-vi"></span>
+                                </button>
+                            </div>
+                        </div>
+                        @*<div class="language">
+                            <div class="navbar-collapse">
+                                <ul class="navbar-nav navbar-language">
+                                    <li class="">
+                                        <a href="" hreflang="vi" class="nav-link" role="menuitem">
+                                            <span class="flag-icon flag-icon-vi"></span>
+                                        </a>
+                                    </li>
+                                    <li class="position-relative">
+                                        <div class="search-box">
+                                            <button class="btn-floating border-0"> <i class="fa fa-search"></i> </button>
+                                        </div>
+                                        <form action="" method="get">
+                                            <input name="search" type="text" class="search-btn" placeholder="Tìm kiếm">
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>*@
+                    </div>
+                </div>
+            </nav>
+
+        </div>
+        <!-- end container-full-->
+        @RenderBody();
+        <footer class="footer">
+            <div class="container-full">
+                <div class="footer-header">
+                    <div class="row">
+                        @*<div class="col-md-12 align-center-sm"> <img src="~/Client/image/logo-TAG-ngang-2000x267.png" alt=""> </div>*@
+                        <div class="col-md-12 col-lg-1">
+                            @*<h4>NHÀ MÁY SẢN XUẤT - LẮP RÁP</h4>
+            <ul class="ul-footer">
+                <li class="w-75">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate,
+                    obcaecati.
+                </li>
+            </ul>*@
+                        </div>
+                        <div class="col-md-12 col-lg-10">
+                            <div class="list-address">
+                                @foreach (var item in doitac)
+                                {
+                                    if (item.Status == true)
+                                    {
+
+
+                                <div>
+                                    <h3 class="my-upercase mr-4">@item.NameDoiTac</h3>
+                                    <ul class="ul-footer">
+                                        <li class="w-75">
+                                            <h4>@item.AdressDoiTac</h4>  
+                                        </li>
+                                        <li class="w-75">
+                                            <h4> @item.Mst</h4>
+</li>
+                                        <li class="w-75">
+                                            <h4> @item.Tel</h4>
+</li>
+                                    </ul>
+                                </div>
+                                    }
+                                }
+
+
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-1">
+                            @*<h4>NHÀ MÁY SẢN XUẤT - LẮP RÁP</h4>
+            <ul class="ul-footer">
+                <li class="w-75">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate,
+                    obcaecati.
+                </li>
+            </ul>*@
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="bg-fo">
+                <div class="container-full">
+                    <div class="footer-bottom">
+                        <div class="go-to-top">
+                            <a href="#" id="goTop" class="btn-floating btn-floating-outline btn-large">
+                                <i class="fa fa-angle-double-up"></i>
+                            </a>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-xl-3">
+                                <div class="footer-phone">
+                                    <a href="tel:0987745690"> <img src="~/Client/image/icon-phone.png" alt=""> </a> <span>
+                                        Hotline:
+                                        0901722525
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-xl-6">
+                                <div class="footer-center">
+                                    <span>Copyright © All Rights Reserved</span>
+                                    <p><a href="">Chính sách bảo mật</a> | <a href="">Các điều khoản và điều kiện</a> </p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-xl-3">
+                                <div class="footer-mxh text-right">
+                                    <span class="text-line">Kết nối với TAG:</span>
+                                    <div class="connect-tcm">
+                                        <a target="_blank" href="">
+                                            <span class="mxh-fb">
+                                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                                            </span>
+                                        </a>
+                                        <a target="_blank" href="">
+                                            <span class="mxh-ytb">
+                                                <i class="fa fa-youtube" aria-hidden="true"></i>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+       
+        <script src="~/Client/js/app.js"></script>
+        <script src="~/Client/js/share.js"></script>
+
+        <script>
+            $('.partner').slick({
+                slidesToShow: 6,
+                autoplay: true,
+                arrows: true,
+                infinite: true,
+                slidesToScroll: 2,
+                prevArrow: "<button type='button' class='slick-prev pull-left'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
+                nextArrow: "<button type='button' class='slick-next pull-right'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
+                responsive: [{
+                    breakpoint: 768,
+                    settings: {
+                        infinite: true,
+                        arrows: false,
+                        slidesToShow: 3
+                    }
+                }, {
+                    breakpoint: 480,
+                    settings: {
+                        infinite: true,
+                        arrows: false,
+                        slidesToShow: 1
+                    }
+                }]
+            });
+            $('.list-news').slick({
+                arrows: false,
+                dots: true,
+                infinite: true,
+                autoplay: true,
+                speed: 300,
+                slidesToShow: 1,
+                adaptiveHeight: true,
+                pauseOnHover: false
+            });
+            $('.homePostSlide').slick({
+                arrows: false,
+                dots: false,
+                infinite: true,
+                slidesToShow: 2,
+                responsive: [{
+                    breakpoint: 768,
+                    settings: {
+                        infinite: true,
+                        arrows: false,
+                        slidesToShow: 1
+                    }
+                }]
+            });
+            $('.list-address').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+            $('.arrow-right-pre-page').click(function () {
+                $(".homePostSlide").slick('slickPrev');
+            });
+            $('.arrow-right-next-page').click(function () {
+                $(".homePostSlide").slick('slickNext');
+            });
+            $('ul.tabs-news a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                $('.homePostSlide').slick('setPosition');
+            });
+        </script>
+        <script>
+            $('.search-box').click(function () {
+                $('.search-btn').toggleClass('activeSearch');
+            });
+
+        </script>
+        <script>
+
+            $("a.grouped_elements").fancybox({
+                width: 800,
+                height: 600,
+                beforeLoad: function () {
+                    $('.fancybox-nav').css('width', '50px')
+                    $('.fancybox-nav').css('height', '80%')
+                },
+                autoSize: false
+            });
+            $('.search-box').click(function () {
+                $('.search-btn').toggleClass('activeSearch');
+            });
+        </script>
+        
+        @RenderSection("Scripts", false)
+    </body>
+
+</html>
